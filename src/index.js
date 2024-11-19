@@ -4,7 +4,6 @@ import passportMiddleware from "./middlewares/passport";
 import passport from "passport";
 import { SERVER_PORT } from "./config/keys";
 import api from "./api";
-import path from "path";
 
 const app = express();
 
@@ -19,11 +18,6 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Headers", "content-type, authorization");
   res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
   next();
-});
-
-app.use(express.static(path.join(__dirname, "../public", "dist")));
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public", "dist", "index.html"));
 });
 
 app.use("/api", api);

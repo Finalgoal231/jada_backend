@@ -31,6 +31,8 @@ app.get("/", (req, res) => {
 
 app.get("/test", (req, res) => res.send("working"));
 
+console.log("Server++++++++++++++++++++++");
+
 app.listen(SERVER_PORT, () =>
   console.log(`Server is running on ${SERVER_PORT}`)
 );
